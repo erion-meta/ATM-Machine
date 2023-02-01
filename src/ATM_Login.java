@@ -5,8 +5,6 @@
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 class ATM_Login extends JFrame
 {
@@ -72,63 +70,52 @@ class ATM_Login extends JFrame
 
         // Action Listener configuration for each button
 
-        exit.addActionListener(new ActionListener()
-        {
-            public void actionPerformed(ActionEvent event)
-            {
-                System.exit(0);
-            }
-        });
+        exit.addActionListener(event -> System.exit(0));
 
-        pinText.addActionListener(new ActionListener()
-        {
-            //If pin is correct ATM will be open
-            //Else, you can retry as many time as you have left
-            public void actionPerformed(ActionEvent event) {
-                char[] pinFind = pinText.getPassword();
-                String pinString = new String(pinFind );
-                if(pinString.equals(pin))
+        //If pin is correct ATM will be open
+        // Else, you can retry as many times as you have left
+        pinText.addActionListener(event -> {
+            char[] pinFind = pinText.getPassword();
+            String pinString = new String(pinFind );
+            if(pinString.equals(pin))
+            {
+                JOptionPane.showMessageDialog(null, "PIN is correct! Account is being opened...");
+                dispose();
+                new ATM_Login();  //ATM opens
+            } else
+            {
+                if(pinRetry != 1)
                 {
-                    JOptionPane.showMessageDialog(null, "PIN is correct! Account is being opened...");
-                    dispose();
-                    new ATM_Login();  //ATM opens
+                    pinRetry--;
+                    JOptionPane.showMessageDialog(null, "PIN is incorrect! \n" + pinRetry
+                            + " remaining possibilities!");
                 } else
                 {
-                    if(pinRetry != 1)
-                    {
-                        pinRetry--;
-                        JOptionPane.showMessageDialog(null, "PIN is incorrect! \n" + pinRetry
-                                + " remaining possibilities!");
-                    } else
-                    {
-                        JOptionPane.showMessageDialog(null, "You have no chance left to try the password! \n The program was closed");
-                        System.exit(0);
-                    }
+                    JOptionPane.showMessageDialog(null, "You have no chance left to try the password! \n The program was closed");
+                    System.exit(0);
                 }
             }
         });
 
-        enter.addActionListener(new ActionListener(){
-            //Action Listener for Enter button
-            public void actionPerformed(ActionEvent event) {
-                char[] pinGuess = pinText.getPassword();
-                String pinString = new String(pinGuess);
-                // if Pin is correct...
-                if(pinString.equals(pin)){
-                    JOptionPane.showMessageDialog(null, "The password is correct! Account is being opened...");
-                    dispose();
-                    new ATM_Login();
-                }
-                //if pin is incorrect...
-                else{
-                    if(pinRetry != 1){
-                        pinRetry--;
-                        JOptionPane.showMessageDialog(null, "The password is incorrect! \n" + pinRetry
-                                + " remaining possibilities!");
-                    } else {
-                        JOptionPane.showMessageDialog(null, "You have no remaining options to write the PIN! \n The program was closed");
-                        System.exit(0);
-                    }
+        //Action Listener for Enter button
+        enter.addActionListener(event -> {
+            char[] pinGuess = pinText.getPassword();
+            String pinString = new String(pinGuess);
+            // if Pin is correct...
+            if(pinString.equals(pin)){
+                JOptionPane.showMessageDialog(null, "The password is correct! Account is being opened...");
+                dispose();
+                new ATM_Login();
+            }
+            //if pin is incorrect...
+            else{
+                if(pinRetry != 1){
+                    pinRetry--;
+                    JOptionPane.showMessageDialog(null, "The password is incorrect! \n" + pinRetry
+                            + " remaining possibilities!");
+                } else {
+                    JOptionPane.showMessageDialog(null, "You have no remaining options to write the PIN! \n The program was closed");
+                    System.exit(0);
                 }
             }
         });
