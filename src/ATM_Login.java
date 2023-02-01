@@ -109,25 +109,25 @@ class ATM_Login extends JFrame
         });
 
         enter.addActionListener(new ActionListener(){
-            //Butoni enter, nese klikohet ben te mundur hapjen e llogarise ne ATM
+            //Action Listener for Enter button
             public void actionPerformed(ActionEvent event) {
                 char[] pinGuess = pinText.getPassword();
                 String pinString = new String(pinGuess);
-                //Nese pini eshte i sakte, llogaria hapet
+                // if Pin is correct...
                 if(pinString.equals(pin)){
-                    JOptionPane.showMessageDialog(null, "Passwordi eshte i sakte! Llogaria po hapet...");
+                    JOptionPane.showMessageDialog(null, "The password is correct! Account is being opened...");
                     dispose();
                     new ATM_Login();
                 }
-                //Ne te kundert jepet mundesia per te vendosur pinin deri ne limit.
+                //if pin is incorrect...
                 else{
                     if(pinRetry != 1){
                         pinRetry--;
-                        JOptionPane.showMessageDialog(null, "Passwordi eshte i pasakte! \n" + pinRetry
-                                + " mundesi te mbetura!"); //Mesazhi i shfaqur nese pini eshte i pa sakte
+                        JOptionPane.showMessageDialog(null, "The password is incorrect! \n" + pinRetry
+                                + " remaining possibilities!");
                     } else {
-                        JOptionPane.showMessageDialog(null, "Nuk keni me mundesi te mbetura per te shkruajtur passwordin! \n Programi u mbyll");
-                        System.exit(0);  // Kur pini eshte vendosur 5 here gabim, mbyllet programi
+                        JOptionPane.showMessageDialog(null, "You have no remaining options to write the PIN! \n The program was closed");
+                        System.exit(0);
                     }
                 }
             }
