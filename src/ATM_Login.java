@@ -1,6 +1,6 @@
 /*
- //////////////////////     Klasa Login    \\\\\\\\\\\\\\\\\\
-  * Ben te mundur logimin ne ATM duke vendosur numrin e kartes dhe pinin.
+ //////////////////////     Login Class    \\\\\\\\\\\\\\\\\\
+  * Panel to put name and pin to log in ATM.
  */
 
 import javax.swing.*;
@@ -10,21 +10,20 @@ import java.awt.event.ActionListener;
 
 class ATM_Login extends JFrame
 {
-    //Deklarojme pinin qe do perdorim per tu loguar ne ATM
-    //Gjithashtu deklarojme dhe mundesite qe kemi per te shkruajtur pinin
-    String pin = "ie202";
-    int mundesia = 5;
+    //Declare a static PIN
+    //A variable that holds the value of how many times we can retry the pin
+    String pin = "987654321";
+    int pinRetry = 5;
 
-    //Konstruktori "Klasa Login"
-    //Vendosim opsionet e konfigurimit te panelit
-    //Brenda konstruktorit therrasim dhe metoden  'Nderto ATM'
+    //"ATM_Login Constructor
+    //Panel configuration options
     public ATM_Login()
     {
-        super("Logimi ne Atm");
+        super("Log in ATM");
         setLayout(new BorderLayout());
         setResizable(false);
         setLocationRelativeTo(null);
-        NdertoLogin();
+        BuildLogin();
         pack();
         setSize(400,250);
         setVisible(true);
@@ -32,17 +31,16 @@ class ATM_Login extends JFrame
     }
 
     /*
-     * Metoda "NdertoLogin"
-     * Konfigurimi i paraqitjes se panelit
+     * BuildLogin method
+     * Panel view configuration
      */
-    void NdertoLogin()
+    void BuildLogin()
     {
 
         setLayout(null);
 
-        //Paneli i vendosjes se numrit te kartes
-        //Vendosim dhe specifikate perkatese te panelit
-        JLabel karta= new JLabel("Numri kartes: ");
+        // Card number from the user
+        JLabel karta= new JLabel("Card Number: ");
         karta.setBounds(10,10,80,25);
         add(karta);
         JTextField kartaTekst = new JTextField(12);
@@ -50,64 +48,61 @@ class ATM_Login extends JFrame
         kartaTekst.setBackground(Color.LIGHT_GRAY);
         add(kartaTekst);
 
-        //Paneli i vendosjes se pinit nga perdoruesi
-        JLabel Pini = new JLabel("Pin: ");
+        //Pin from the user
+        JLabel Pini = new JLabel("PIN: ");
         Pini.setBounds(10,40,80,25);
         add(Pini);
-        JPasswordField tekstPin = new JPasswordField(8);
-        tekstPin.setBounds(100,40,160,25);
-        tekstPin.setBackground(Color.LIGHT_GRAY);
-        add(tekstPin);
+        JPasswordField pinText = new JPasswordField(8);
+        pinText.setBounds(100,40,160,25);
+        pinText.setBackground(Color.LIGHT_GRAY);
+        add(pinText);
 
-        //Paneli i butonit "Enter"
+        //Enter button
         JButton enter = new JButton("Enter");
         enter.setBounds(10,80,80,25);
         enter.setBackground(Color.green);
         add(enter);
 
-        //Paneli i butonit "Dil"
-        JButton dil = new JButton("Dil");
-        dil.setBounds(180,80,80,25);
-        dil.setBackground(Color.red);
-        add(dil);
+        //Exit button
+        JButton exit = new JButton("Exit");
+        exit.setBounds(180,80,80,25);
+        exit.setBackground(Color.red);
+        add(exit);
 
 
-        //Konfigurimi Action Listener
+        // Action Listener configuration for each button
 
-        dil.addActionListener(new ActionListener()
+        exit.addActionListener(new ActionListener()
         {
-            // Butoni "Dil" , nese klikohet ben te mundur daljen nga programi
-            // Metoda actionPerformed per butonin perkates
             public void actionPerformed(ActionEvent event)
             {
                 System.exit(0);
             }
         });
 
-
-        tekstPin.addActionListener(new ActionListener()
+        pinText.addActionListener(new ActionListener()
         {
-            //Nese pini eshte i vendosur sakte, hapet llogaria ne ATM
-            //Ne te kundert te jepet edhe njehere mundesia per te vendosur pinin derisa mbarojne mundesite.
+            //If pin is correct ATM will be open
+            //Else, you can retry as many time as you have left
             public void actionPerformed(ActionEvent event) {
-                char[] GjetjaPin = tekstPin.getPassword();
-                String pinString = new String(GjetjaPin );
+                char[] pinFind = pinText.getPassword();
+                String pinString = new String(pinFind );
                 if(pinString.equals(pin))
                 {
-                    JOptionPane.showMessageDialog(null, "Passwordi eshte i sakte! Llogaria po hapet...");  //Mesazhi qe shfaqet pasi eshte gjetur pini
+                    JOptionPane.showMessageDialog(null, "PIN is correct! Account is being opened...");
                     dispose();
-                    new ATM_Login();  //Hapet ATM
+                    new ATM_Login();  //ATM opens
                 } else
                 {
-                    if(mundesia != 1)
+                    if(pinRetry != 1)
                     {
-                        mundesia--;
-                        JOptionPane.showMessageDialog(null, "Passwordi eshte i pa sakte! \n" + mundesia
-                                + " mundesi te mbetura!");  //Mesazhi i shfaqur nese pini eshte i pa sakte
+                        pinRetry--;
+                        JOptionPane.showMessageDialog(null, "PIN is incorrect! \n" + pinRetry
+                                + " remaining possibilities!");
                     } else
                     {
-                        JOptionPane.showMessageDialog(null, "Nuk keni mundesi te mbetura per te provuar passwordin! \n Programi u mbyll");
-                        System.exit(0);  // Kur pini eshte vendosur 5 here gabim, mbyllet programi
+                        JOptionPane.showMessageDialog(null, "You have no chance left to try the password! \n The program was closed");
+                        System.exit(0);
                     }
                 }
             }
@@ -116,7 +111,7 @@ class ATM_Login extends JFrame
         enter.addActionListener(new ActionListener(){
             //Butoni enter, nese klikohet ben te mundur hapjen e llogarise ne ATM
             public void actionPerformed(ActionEvent event) {
-                char[] pinGuess = tekstPin.getPassword();
+                char[] pinGuess = pinText.getPassword();
                 String pinString = new String(pinGuess);
                 //Nese pini eshte i sakte, llogaria hapet
                 if(pinString.equals(pin)){
@@ -126,9 +121,9 @@ class ATM_Login extends JFrame
                 }
                 //Ne te kundert jepet mundesia per te vendosur pinin deri ne limit.
                 else{
-                    if(mundesia != 1){
-                        mundesia--;
-                        JOptionPane.showMessageDialog(null, "Passwordi eshte i pasakte! \n" + mundesia
+                    if(pinRetry != 1){
+                        pinRetry--;
+                        JOptionPane.showMessageDialog(null, "Passwordi eshte i pasakte! \n" + pinRetry
                                 + " mundesi te mbetura!"); //Mesazhi i shfaqur nese pini eshte i pa sakte
                     } else {
                         JOptionPane.showMessageDialog(null, "Nuk keni me mundesi te mbetura per te shkruajtur passwordin! \n Programi u mbyll");
