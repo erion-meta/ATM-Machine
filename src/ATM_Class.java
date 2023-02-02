@@ -10,11 +10,11 @@ public class ATM_Class extends JFrame {
     //Variables to control balance, input from the user forr the deposit etc.
     // To control if "Deposit" is clicked before "Enter".
 
-    int balanca = 100;   // Balanca fillestare e inicializojme me 100$.
-    String[] transaksioni = new String[4];  // Inputi qe vendos perdoruesi per te depozituar
-    String[] Historiatransaksionit = new String[100];  // Mban historine e trnsaksionit qe do printohet ne fature
-    int IndeksiInputit = 0; //Indeksi i inputit te vendosur nga perdoruesi
-    int IndeksiTransaksionit = 0;  //Indeksi i transaksionit qe eshte kryer
+    int balance = 100;   // Initialize the initial balance with $100.
+    String[] transaksioni = new String[4];  // The input that the user decides to deposit
+    String[] Historiatransaksionit = new String[100];  // Keeps the transaction history that will be printed on the invoice
+    int IndeksiInputit = 0; //The input index set by the user
+    int IndeksiTransaksionit = 0;  //The index of the transaction that was performed
     boolean ShtypEnter = false;
 
     // ATM_Class constructor
