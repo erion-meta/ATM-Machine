@@ -4,4 +4,7 @@
  *
  */
 public class ATM_Class {
+    public static void main(String[] args) {
+
+    }
 }
