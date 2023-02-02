@@ -3,8 +3,8 @@
  * GUI configuration for ATM panel
  *
  */
-public class ATM_Class {
-    public static void main(String[] args) {
 
-    }
+import javax.swing.*;
+
+public class ATM_Class extends JFrame {
 }
