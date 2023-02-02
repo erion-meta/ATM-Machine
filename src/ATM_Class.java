@@ -1,15 +1,14 @@
 ///////////////////   ATM Class \\\\\\\\\\\\\\\\\\\\\\\\\
 /*
  * GUI configuration for ATM panel
- *
  */
 
 import javax.swing.*;
 
 public class ATM_Class extends JFrame {
 
-    //Variablet qe do na duhen per te kontrrolluar balancen, inputin nga perdoruesi per depozitat etj.
-    //Dhe per te kontrrolluar nese eshte klikuar "Depozito" perpara Enter
+    //Variables to control balance, input from the user forr the deposit etc.
+    // To control if "Deposit" is clicked before "Enter".
 
     int balanca = 100;   // Balanca fillestare e inicializojme me 100$.
     String[] transaksioni = new String[4];  // Inputi qe vendos perdoruesi per te depozituar
@@ -29,7 +28,7 @@ public class ATM_Class extends JFrame {
         }
         setResizable(false);
         setLocationRelativeTo(null);
-        NdertoATM();
+        //NdertoATM();
         pack();
         setSize(800,500);
         setVisible(true);
