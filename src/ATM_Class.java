@@ -8,9 +8,7 @@ import javax.swing.*;
 
 public class ATM_Class extends JFrame {
 
-    /* Konstruktori i klases ATM
-     * Vendosim opsionet e konfigurimit, madhesine, ndertimi i programit.
-     */
+    // ATM_Class constructor
     public ATM_Class()
     {
         super("ATM Account!!");
