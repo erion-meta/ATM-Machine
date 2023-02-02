@@ -8,6 +8,16 @@ import javax.swing.*;
 
 public class ATM_Class extends JFrame {
 
+    //Variablet qe do na duhen per te kontrrolluar balancen, inputin nga perdoruesi per depozitat etj.
+    //Dhe per te kontrrolluar nese eshte klikuar "Depozito" perpara Enter
+
+    int balanca = 100;   // Balanca fillestare e inicializojme me 100$.
+    String[] transaksioni = new String[4];  // Inputi qe vendos perdoruesi per te depozituar
+    String[] Historiatransaksionit = new String[100];  // Mban historine e trnsaksionit qe do printohet ne fature
+    int IndeksiInputit = 0; //Indeksi i inputit te vendosur nga perdoruesi
+    int IndeksiTransaksionit = 0;  //Indeksi i transaksionit qe eshte kryer
+    boolean ShtypEnter = false;
+
     // ATM_Class constructor
     public ATM_Class()
     {
