@@ -456,4 +456,34 @@ public class ATM_Class extends JFrame {
         IndeksiInputit = 0;
     }
 
+    /*
+     * Metoda "peerditesonInputin"
+     * Perditeson zonen i inputit dhe me nje numer kur klikohet butoni perkates
+     */
+    String perditesoInputin(String a)
+    {
+        if(IndeksiInputit <= 3)
+        { transaksioni[IndeksiInputit] = a;
+            IndeksiInputit ++;
+
+            StringBuilder strBuilder = new StringBuilder();
+            for(int i = 0; i <transaksioni.length; i++)
+            {
+                strBuilder.append(transaksioni[i]);
+            }
+            String newString = strBuilder.toString();
+            return newString;
+        }
+        else
+        {
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i <= 3; i++) {
+                strBuilder.append(transaksioni[i]);
+            }
+            String newString = strBuilder.toString();
+            return newString;
+        }
+    }
+
+
 }
