@@ -485,5 +485,26 @@ public class ATM_Class extends JFrame {
         }
     }
 
+    /*
+     * Metoda "getInputiVendosur"
+     * Mer inputin e futur nga perdoruesi dhe perditeson balancen
+     */
+    String getInputiVendosur()
+    {
+        StringBuilder strBuilder = new StringBuilder();
+        //Inputi duhet te mos jete 0.
+        if(transaksioni[0] == ""){
+            return "0000";
+        } else {
+            for (int i = 0; i < transaksioni.length; i++) {
+                strBuilder.append(transaksioni[i]);
+            }
+            String newString = strBuilder.toString();
+            return newString;
+        }
+
+    }
+
+
 
 }
