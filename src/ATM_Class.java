@@ -514,7 +514,14 @@ public class ATM_Class extends JFrame {
         return "&emsp Zona e Instruksionit <br> &emsp Ju lutem zgjidhni nje nga funksionet e meposhtme <br> &emsp Balanca momentit: $" + balanca;
     }
 
-
+    /*
+     *  Metoda "PerditesoBalancen"
+     *  Përditëson balancen pas depozitimit
+     */
+    void PerditesoBalancen(int l)
+    {
+        balance += l;
+    }
 
 
 }
