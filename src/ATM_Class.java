@@ -49,7 +49,7 @@ public class ATM_Class extends JFrame {
          * Paneli i instruksionive
          * Eshte bere ndertimi i panelit te instruksioneve, eshte vendosur ngjyra e background, borderline, konfigurimet e tekstit etj.
          */
-        JLabel displayArea = new JLabel("<html> &emsp Instruksionet: <br> &emsp Ju lutem zgjjidhni nje nga instruksionet e meposhtme <br> &emsp Balanca momentale:  $"+ balanca+ "</html>");
+        JLabel displayArea = new JLabel("<html> &emsp Instruksionet: <br> &emsp Ju lutem zgjjidhni nje nga instruksionet e meposhtme <br> &emsp Balanca momentale:  $"+ balance+ "</html>");
         displayArea.setOpaque(true);
         displayArea.setBackground(Color.DARK_GRAY);
         displayArea.setBorder(BorderFactory.createLineBorder(Color.red));
@@ -320,7 +320,7 @@ public class ATM_Class extends JFrame {
                 JOptionPane.showMessageDialog(null,"Fatura Juaj: \n" +printoFaturen());
                 JOptionPane.showMessageDialog(null, "Duke dal nga llogaria juaj! Rikthim tek regjistrimi!");
                 dispose();
-                new KlasaLogin();
+                new ATM_Login();
             }
 
         });
@@ -511,7 +511,7 @@ public class ATM_Class extends JFrame {
      */
     String TransaksionPerfunduar()
     {
-        return "&emsp Zona e Instruksionit <br> &emsp Ju lutem zgjidhni nje nga funksionet e meposhtme <br> &emsp Balanca momentit: $" + balanca;
+        return "&emsp Zona e Instruksionit <br> &emsp Ju lutem zgjidhni nje nga funksionet e meposhtme <br> &emsp Balanca momentit: $" + balance;
     }
 
     /*
