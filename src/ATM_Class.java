@@ -504,6 +504,16 @@ public class ATM_Class extends JFrame {
         }
 
     }
+    /*
+     * Metoda "TransaksionPerfunduar"
+     * Rivendosim programin në gjendjen e tij origjinale me bilancin e ri te perditesuar
+     * E therrasim sa here te kryhet nje transaksion
+     */
+    String TransaksionPerfunduar()
+    {
+        return "&emsp Zona e Instruksionit <br> &emsp Ju lutem zgjidhni nje nga funksionet e meposhtme <br> &emsp Balanca momentit: $" + balanca;
+    }
+
 
 
 
