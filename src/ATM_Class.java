@@ -35,4 +35,9 @@ public class ATM_Class extends JFrame {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
     }
 
+    /*
+     * Metoda qe ben konfigurimin e GUI
+     * Konfigurimi i paraqitjes se panelit
+     */
+
 }
