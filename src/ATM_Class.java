@@ -31,7 +31,7 @@ public class ATM_Class extends JFrame {
         }
         setResizable(false);
         setLocationRelativeTo(null);
-        //NdertoATM();
+        NdertoATM();
         pack();
         setSize(800,500);
         setVisible(true);
@@ -235,7 +235,7 @@ public class ATM_Class extends JFrame {
         add(bottomArea, BorderLayout.CENTER);
 
         /*
-         *  Konfigurimi i Action Listener
+         *  Konfigurimi Action Listener
          *  Me 3 butonat  e terheqjes se balances
 
          */

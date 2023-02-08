@@ -81,7 +81,7 @@ class ATM_Login extends JFrame
             {
                 JOptionPane.showMessageDialog(null, "PIN is correct! Account is being opened...");
                 dispose();
-                new ATM_Login();  //ATM opens
+                new ATM_Class();  //ATM opens
             } else
             {
                 if(pinRetry != 1)
@@ -105,7 +105,7 @@ class ATM_Login extends JFrame
             if(pinString.equals(pin)){
                 JOptionPane.showMessageDialog(null, "The password is correct! Account is being opened...");
                 dispose();
-                new ATM_Login();
+                new ATM_Class();
             }
             //if pin is incorrect...
             else{
