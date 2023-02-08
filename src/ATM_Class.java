@@ -523,5 +523,16 @@ public class ATM_Class extends JFrame {
         balance += l;
     }
 
+    /*
+     * Metoda "PerditesoHistoriaTransaksionit"
+     * Perditeson histoine e transaksionit te bere ne ATM, qe do printohet ne fature.
+     */
+    void PerditesoHistoriaTransaksionit(String b)
+    {
+        Historiatransaksionit[IndeksiTransaksionit] = b;
+        IndeksiTransaksionit++;
+    }
+
+
 
 }
