@@ -533,6 +533,23 @@ public class ATM_Class extends JFrame {
         IndeksiTransaksionit++;
     }
 
-
+    /*
+     * Metoda "printoFaturen"
+     * Printon faturen npasi mbyllet programi
+     * Fatura e printuar bashke me te gjitha transaksionet e kryera
+     */
+    String printoFaturen()
+    {
+        if(transaksioni[0].equals(null)){
+            return "&emsp Nuk eshte bere asnje transaksion!";
+        } else{
+            StringBuilder strBuilder = new StringBuilder();
+            for (int i = 0; i < IndeksiTransaksionit; i++) {
+                strBuilder.append(Historiatransaksionit[i] + "\n");
+            }
+            String newString = strBuilder.toString();
+            return newString;
+        }
+    }
 
 }
