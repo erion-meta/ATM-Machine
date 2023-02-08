@@ -440,5 +440,20 @@ public class ATM_Class extends JFrame {
         });
 
     }
+    ////Metodat per llogaritjen e veprimeve me balancen\\\\
+
+    /*
+     * Metoda "fshiInputin"
+     * Fshin inputin e vendosur ne panel
+     */
+    public void fshiInputin()
+    {
+        //Kontrrollon numrat e inputit nga indeksi 0 deri ne 3
+        for(int i = 0; i<=3; i++)
+        {
+            transaksioni[i] = "";
+        }
+        IndeksiInputit = 0;
+    }
 
 }
