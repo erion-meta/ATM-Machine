@@ -39,15 +39,15 @@ public class ATM_Class extends JFrame {
     }
 
     /*
-     * Metoda qe ben konfigurimin e GUI
-     * Konfigurimi i paraqitjes se panelit
+     * The method that configures the GUI
+     * Configuring the panel layout
      */
     protected void NdertoATM()
     {
 
         /*
-         * Paneli i instruksionive
-         * Eshte bere ndertimi i panelit te instruksioneve, eshte vendosur ngjyra e background, borderline, konfigurimet e tekstit etj.
+         * Instruction panel
+         * The construction of the instruction panel has been done, the background color, borderline, text configurations, etc. have been set.
          */
         JLabel displayArea = new JLabel("<html> &emsp Instructions: <br> &emsp Please select one of the instructions below <br> &emsp Current balance:  $"+ balance+ "</html>");
         displayArea.setOpaque(true);
@@ -63,14 +63,14 @@ public class ATM_Class extends JFrame {
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new BorderLayout(0,0));
 
-        //Zona e inputit qe vendos perdoruesi me ane te butonave.
+        //The input area that the user sets using the buttons.
         JLabel inputDisplay = new JLabel("...");
         inputDisplay.setBorder(BorderFactory.createLineBorder(Color.red));
         inputDisplay.setPreferredSize(new Dimension(50,35));
         inputDisplay.setFont(new Font("Serif", Font. BOLD, 15));
         bottomArea.add(inputDisplay, BorderLayout.NORTH);
 
-        //Konfigurimi i paraqitjes së  butonave ne ATM
+        //Configuring the appearance of buttons in ATM
         GridBagLayout butonat = new GridBagLayout();
         buttonPanel.setLayout(butonat);
         buttonPanel.setBackground(Color.black);
@@ -79,9 +79,9 @@ public class ATM_Class extends JFrame {
 
 
 
-        /*Konfigurimi me rradhe i butonave specifikisht
-         * Duke i percaktuar vendin e paraqitjes, madhesine, ngjyren ne background, konfigurimet e tekstit
-         * Dhe ne fund shtimi i tyre ne panel.
+        /* Sequential configuration of buttons specifically
+         * Determining the place of presentation, size, background color, text configurations
+         * And finally adding them to the panel.
          */
         butonatK.weightx = 0.1;
         butonatK.weighty = 0.1;
