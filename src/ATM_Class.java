@@ -267,19 +267,19 @@ public class ATM_Class extends JFrame {
             public void actionPerformed(ActionEvent event)
             {
                 /*
-                 * Nese balanca eshte me e madhe se $50 kryhen veprimet ne ATM
-                 * Ne te kundert njerr nje mesazh gabimi
+                 * If the balance is greater than $50, the actions are carried out at the ATM
+                 * Otherwise, an error message is displayed
                  */
                 if(balance >= 50)
                 {
                     balance = balance - 50;
-                    displayArea.setText("<html> &emsp $50 Terhequr! <br><br> " +TransaksionPerfunduar() + "</html>");
+                    displayArea.setText("<html> &emsp $50 Withdrawn! <br><br> " +TransaksionPerfunduar() + "</html>");
                     ShtypEnter = false;
-                    System.out.println(" Ti ke terhequr $50");
-                    PerditesoHistoriaTransaksionit("Perdoruesi ka terhequr $50");
+                    System.out.println("You have withdrawn $50");
+                    PerditesoHistoriaTransaksionit("User has withdrawn $50");
                 } else
                 {
-                    displayArea.setText("<html> &emsp Balanca juaj eshte nen $50. E pamundur per te terhequr!! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp Your balance is under $50. Impossible to withdraw!! <br><br>"+TransaksionPerfunduar()+"</html>");
                 }
 
             }
@@ -287,7 +287,7 @@ public class ATM_Class extends JFrame {
 
         terhiq3.addActionListener(new ActionListener()
         {
-            //Metoda e ActionEvent per butonin Terhiq $100
+            //ActionEvent method for the button Withdraw $100
             public void actionPerformed(ActionEvent event)
             {
                 /*
