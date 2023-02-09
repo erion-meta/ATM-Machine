@@ -86,7 +86,7 @@ public class ATM_Class extends JFrame {
         butonatK.weightx = 0.1;
         butonatK.weighty = 0.1;
 
-        JButton terhiq1 = new JButton("Terhiq $10");
+        JButton terhiq1 = new JButton("Withdraw $10");
         butonatK.gridx = 0;
         butonatK.gridy = 0;
         butonatK.insets = new Insets(0,0,5,5);
@@ -95,7 +95,7 @@ public class ATM_Class extends JFrame {
         terhiq1.setFont(new Font("SansSerif", Font. BOLD, 15));
         buttonPanel.add(terhiq1, butonatK);
 
-        JButton terhiq2 = new JButton("Terhiq $50");
+        JButton terhiq2 = new JButton("Withdraw $50");
         butonatK.gridx = 0;
         butonatK.gridy = 1;
         terhiq2.setSize(new Dimension(200,100));
@@ -103,7 +103,7 @@ public class ATM_Class extends JFrame {
         terhiq2.setFont(new Font("SansSerif", Font. BOLD, 15));
         buttonPanel.add(terhiq2, butonatK);
 
-        JButton terhiq3 = new JButton("Terhiq $100");
+        JButton terhiq3 = new JButton("Withdraw $100");
         butonatK.gridx = 0;
         butonatK.gridy = 2;
         terhiq2.setSize(new Dimension(200,100));
@@ -111,7 +111,7 @@ public class ATM_Class extends JFrame {
         buttonPanel.add(terhiq3, butonatK);
         terhiq3.setBackground(Color.cyan);
 
-        JButton depozito = new JButton("Depozito");
+        JButton depozito = new JButton("Deposit");
         butonatK.gridx = 0;
         butonatK.gridy = 3;
         depozito.setSize(new Dimension(200,30));
@@ -119,7 +119,7 @@ public class ATM_Class extends JFrame {
         depozito.setFont(new Font("SansSerif", Font. BOLD, 15));
         buttonPanel.add(depozito,butonatK);
 
-        JButton dil = new JButton("Dil");
+        JButton dil = new JButton("Exit");
         butonatK.gridx = 0;
         butonatK.gridy = 4;
         butonatK.anchor = GridBagConstraints.PAGE_END;
@@ -209,7 +209,7 @@ public class ATM_Class extends JFrame {
         numri0.setFont(new Font("SansSerif", Font. BOLD, 15));
         buttonPanel.add(numri0, butonatK);
 
-        JButton fshi = new JButton("Fshi");
+        JButton fshi = new JButton("Delete");
         butonatK.gridx = 2;
         butonatK.gridy = 3;
         fshi.setSize(new Dimension(200,30));
@@ -226,7 +226,7 @@ public class ATM_Class extends JFrame {
         enter.setFont(new Font("SansSerif", Font. BOLD, 15));
         buttonPanel.add(enter, butonatK);
 
-        //I shtojme te gjitha butonat ne panelin e mesiperm.
+        //We add all the buttons to the upper panel.
 
         buttonPanel.add(enter,butonatK);
         bottomArea.add(buttonPanel, BorderLayout.CENTER);
@@ -235,36 +235,35 @@ public class ATM_Class extends JFrame {
         add(bottomArea, BorderLayout.CENTER);
 
         /*
-         *  Konfigurimi Action Listener
-         *  Me 3 butonat  e terheqjes se balances
-
+         * ActionListener configuration
+         * With 3 balance pull buttons
          */
         terhiq1.addActionListener(new ActionListener()
         {
-            // Metoda e ActionEvent per butonin Terhiq $10
+            // ActionEvent method for the Withdraw $10 button
             public void actionPerformed(ActionEvent event)
             {
                 /*
-                 * Nese balanca eshte me e madhe se $10 kryhen veprimet ne ATM
-                 * Ne te kundert njerr nje mesazh gabimi
+                 * If the balance is greater than $10, the actions are carried out at the ATM
+                 * Otherwise, an error message is displayed
                  */
                 if(balance >= 10)
                 {
                     balance = balance - 10;
-                    displayArea.setText("<html> &emsp $10 Terhequr! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp $10 Withdrawn! <br><br>"+TransaksionPerfunduar()+"</html>");
                     ShtypEnter = false;
-                    System.out.println("Ti ke terhequr $10");
-                    PerditesoHistoriaTransaksionit("Perdoruesi ka terhequr $10");
+                    System.out.println("You have withdrawn $10");
+                    PerditesoHistoriaTransaksionit("User has withdrawn $10");
                 } else
                 {
-                    displayArea.setText("<html> &emsp Balanca jote eshte nen $10. E pamundur per te terhequr!! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp Your balance is under $10. Impossible to withdraw!! <br><br>"+TransaksionPerfunduar()+"</html>");
                 }
 
             }
         });
 
         terhiq2.addActionListener(new ActionListener()
-        {	//Metoda e ActionEvent per butonin Terhiq $50
+        {	//ActionEvent method for the Withdraw $50 button
             public void actionPerformed(ActionEvent event)
             {
                 /*
