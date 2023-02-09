@@ -291,33 +291,33 @@ public class ATM_Class extends JFrame {
             public void actionPerformed(ActionEvent event)
             {
                 /*
-                 * Nese balanca eshte me e madhe se $100 kryhen veprimet ne ATM
-                 * Ne te kundert njerr nje mesazh gabimi
+                 * If the balance is greater than $100, the actions are carried out at the ATM
+                 * Otherwise, an error message is displayed
                  */
                 if(balance >= 100)
                 {
                     balance = balance - 100;
-                    displayArea.setText("<html> &emsp $100 Terhequr! <br><br> "+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp $100 Withdrawn! <br><br> "+TransaksionPerfunduar()+"</html>");
                     ShtypEnter = false;
-                    System.out.println("Ti ke terhequr $100");
-                    PerditesoHistoriaTransaksionit("Perdoruesi ka terhequr $100");
+                    System.out.println("You have withdrawn $100");
+                    PerditesoHistoriaTransaksionit("User has withdrawn $100");
                 } else
                 {
-                    displayArea.setText("<html> &emsp Balanca juaj eshte nen $100. E pamundur per te terhequr!! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp Your balance is under $100. Impossible to withdraw!! <br><br>"+TransaksionPerfunduar()+"</html>");
                 }
 
             }
         });
 
-        // Butoni "Dil"
-        // Ben te mundur daljen nga ATM dhe rikthimi edhe njehere  tek logimi
+        // "Exit" button
+        // It makes it possible to exit the ATM and return to the login once again
 
         dil.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent event)
             {
-                JOptionPane.showMessageDialog(null,"Fatura Juaj: \n" +printoFaturen());
-                JOptionPane.showMessageDialog(null, "Duke dal nga llogaria juaj! Rikthim tek regjistrimi!");
+                JOptionPane.showMessageDialog(null,"Your invoice: \n" +printoFaturen());
+                JOptionPane.showMessageDialog(null, "Signing out of your account! Back to registration!");
                 dispose();
                 new ATM_Login();
             }
