@@ -491,7 +491,7 @@ public class ATM_Class extends JFrame {
     String getInputiVendosur()
     {
         StringBuilder strBuilder = new StringBuilder();
-        //Inputi duhet te mos jete 0.
+        //Input must not be 0.
         if(transaksioni[0] == ""){
             return "0000";
         } else {
@@ -505,12 +505,12 @@ public class ATM_Class extends JFrame {
     }
     /*
      * Metoda "TransaksionPerfunduar"
-     * Rivendosim programin në gjendjen e tij origjinale me bilancin e ri te perditesuar
-     * E therrasim sa here te kryhet nje transaksion
+     * Restore the program to its original state with the new updated balance
+     * Call it every time a transaction is completed
      */
     String TransaksionPerfunduar()
     {
-        return "&emsp Zona e Instruksionit <br> &emsp Ju lutem zgjidhni nje nga funksionet e meposhtme <br> &emsp Balanca momentit: $" + balance;
+        return "&emsp Instruction Area <br> &emsp Please select one of the functions below <br> &emsp Momentum balance: $" + balance;
     }
 
     /*
