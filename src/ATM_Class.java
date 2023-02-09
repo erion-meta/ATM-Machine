@@ -439,15 +439,15 @@ public class ATM_Class extends JFrame {
         });
 
     }
-    ////Metodat per llogaritjen e veprimeve me balancen\\\\
+    ////Methods for calculating actions with the balance\\\\
 
     /*
-     * Metoda "fshiInputin"
-     * Fshin inputin e vendosur ne panel
+     * "Delete Input" method
+     * Deletes the input placed in the panel
      */
     public void fshiInputin()
     {
-        //Kontrrollon numrat e inputit nga indeksi 0 deri ne 3
+        //Checks the input numbers from index 0 to 3
         for(int i = 0; i<=3; i++)
         {
             transaksioni[i] = "";
@@ -456,8 +456,8 @@ public class ATM_Class extends JFrame {
     }
 
     /*
-     * Metoda "peerditesonInputin"
-     * Perditeson zonen i inputit dhe me nje numer kur klikohet butoni perkates
+     * "PeerditesonInputin" method
+     * Updates the input area with a number when the corresponding button is clicked
      */
     String perditesoInputin(String a)
     {
@@ -485,8 +485,8 @@ public class ATM_Class extends JFrame {
     }
 
     /*
-     * Metoda "getInputiVendosur"
-     * Mer inputin e futur nga perdoruesi dhe perditeson balancen
+     * "getInputSet" method
+     * Takes the input entered by the user and updates the balance
      */
     String getInputiVendosur()
     {
