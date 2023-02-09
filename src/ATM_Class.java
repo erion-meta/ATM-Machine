@@ -324,23 +324,23 @@ public class ATM_Class extends JFrame {
 
         });
 
-        //Butoni Fshi
-        //Fshin inputin e vendosur nga perdoruesi me butonat
+        //Delete button
+        //Deletes the input set by the user with the buttons
 
         fshi.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent event)
             {
-                inputDisplay.setText("Veprimet ne ATM: ");
-                displayArea.setText("<html> &emsp Zona e inputit u fshi! <br><br>"+TransaksionPerfunduar()+" </html>");
+                inputDisplay.setText("ATM operations: ");
+                displayArea.setText("<html> &emsp The input field was deleted! <br><br>"+TransaksionPerfunduar()+" </html>");
                 fshiInputin();
                 ShtypEnter = false;
             }
         });
 
-        //Butonat e numrave
-        //Ben te mundur qe sa here klikohet nje buton nga perdoruesi, te shtohet numri i atij butoni ne zonen e inputit
-        //Cdo buton permban ActionListener dhe metoden Action event
+        //Number buttons
+        //Makes it possible to add the number of that button to the input area every time a button is clicked by the user
+        //Each button contains ActionListener and Action event method
         numri1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("1"));
