@@ -49,7 +49,7 @@ public class ATM_Class extends JFrame {
          * Paneli i instruksionive
          * Eshte bere ndertimi i panelit te instruksioneve, eshte vendosur ngjyra e background, borderline, konfigurimet e tekstit etj.
          */
-        JLabel displayArea = new JLabel("<html> &emsp Instruksionet: <br> &emsp Ju lutem zgjjidhni nje nga instruksionet e meposhtme <br> &emsp Balanca momentale:  $"+ balance+ "</html>");
+        JLabel displayArea = new JLabel("<html> &emsp Instructions: <br> &emsp Please select one of the instructions below <br> &emsp Current balance:  $"+ balance+ "</html>");
         displayArea.setOpaque(true);
         displayArea.setBackground(Color.DARK_GRAY);
         displayArea.setBorder(BorderFactory.createLineBorder(Color.red));
