@@ -392,46 +392,46 @@ public class ATM_Class extends JFrame {
             }
         });
 
-        //Butoni i Depozitimit
-        // Ben te mundur qe inputi i vendosur nga perdoruesi te depozitohet ne llogari kur te klikohet "Enter"
+        //Deposit button
+        //Enables the input entered by the user to be deposited into the account when "Enter" is clicked
         depozito.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                displayArea.setText("<html> &emsp Depozita u selektua! <br> &emsp Ju lutem vendosni nje shume dhe klikoni enter! <br><br>"
+                displayArea.setText("<html> &emsp The deposit was selected! <br> &emsp Please enter an amount and click Enter! <br><br>"
                         + TransaksionPerfunduar() + "</html>" );
                 ShtypEnter = true;
             }
         });
 
-        //Butoni Enter
-        // Pasi kemi zgjedhur depozitimin dhe eshte vendosur sasia nga perdoruesi, shtypim enter dhe perditesohet Balanca.
+        //Enter button
+        // After we have selected the deposit and the amount has been set by the user, press enter and the Balance is updated.
         enter.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent event)
             {
-                //Kushti qe te kryhet veprimi ne butonin enter
+                //Condition to perform the action on the enter button
                 if(ShtypEnter == true)
                 {
-                    //Nese inputi i vendosur nga perdoruesi eshte 0 nxirret nje mesazh gabimi
-                    //Ne te kundert balanca perditesohet me ate shumen e vendosur.
+                    //If the input set by the user is 0, an error message is output
+                    //On the contrary, the balance is updated with the set amount.
                     if(Integer.parseInt(getInputiVendosur())==0 || getInputiVendosur().equals("0000"))
                     {
-                        displayArea.setText("\tTi nuk ke vendosur asnje vlere!");
+                        displayArea.setText("\tYou have not set any value!");
                         fshiInputin();
                         inputDisplay.setText("...");
                         ShtypEnter = false;
                     }else
                     {
                         PerditesoBalancen(Integer.parseInt(getInputiVendosur()));
-                        displayArea.setText("<html> &emsp Ti ke depozituar $" + getInputiVendosur()
+                        displayArea.setText("<html> &emsp You have deposited $" + getInputiVendosur()
                                 + "! <br><br>" + TransaksionPerfunduar() + "</html>");
-                        PerditesoHistoriaTransaksionit("Perdoruesi ka depozituar $" + getInputiVendosur());
+                        PerditesoHistoriaTransaksionit("The user has deposited $" + getInputiVendosur());
                     }
                     fshiInputin();
                     inputDisplay.setText("...");
                     ShtypEnter = false;
                 }else
                 {
-                    displayArea.setText("<html> &emsp Ju nuk keni zgjedhur asnje veprim! <br><br>" + TransaksionPerfunduar() + "</html>");
+                    displayArea.setText("<html> &emsp You have not selected any action! <br><br>" + TransaksionPerfunduar() + "</html>");
                     fshiInputin();
                     inputDisplay.setText("...");
                 }
