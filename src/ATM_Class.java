@@ -514,8 +514,8 @@ public class ATM_Class extends JFrame {
     }
 
     /*
-     *  Metoda "PerditesoBalancen"
-     *  Përditëson balancen pas depozitimit
+     * "UpdateBalance" method
+     * Updates balance after deposit
      */
     void PerditesoBalancen(int l)
     {
@@ -523,8 +523,8 @@ public class ATM_Class extends JFrame {
     }
 
     /*
-     * Metoda "PerditesoHistoriaTransaksionit"
-     * Perditeson histoine e transaksionit te bere ne ATM, qe do printohet ne fature.
+     * "UpdateTransactionHistory" method
+     * Updates the history of the transaction made at the ATM, which will be printed on the invoice.
      */
     void PerditesoHistoriaTransaksionit(String b)
     {
@@ -534,13 +534,13 @@ public class ATM_Class extends JFrame {
 
     /*
      * Metoda "printoFaturen"
-     * Printon faturen npasi mbyllet programi
-     * Fatura e printuar bashke me te gjitha transaksionet e kryera
+     * Prints the invoice after closing the program
+     * Printed invoice together with all transactions made
      */
     String printoFaturen()
     {
         if(transaksioni[0].equals(null)){
-            return "&emsp Nuk eshte bere asnje transaksion!";
+            return "&emsp No transaction has been made!";
         } else{
             StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i < IndeksiTransaksionit; i++) {
