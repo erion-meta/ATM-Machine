@@ -15,7 +15,7 @@ public class ATM_Class extends JFrame {
 
     int balance = 100;   // Initialize the initial balance with $100.
     String[] transaction = new String[4];  // The input that the user decides to deposit
-    String[] Historiatransaksionit = new String[100];  // Keeps the transaction history that will be printed on the invoice
+    String[] transactionHist = new String[100];  // Keeps the transaction history that will be printed on the invoice
     int IndeksiInputit = 0; //The input index set by the user
     int IndeksiTransaksionit = 0;  //The index of the transaction that was performed
     boolean ShtypEnter = false;
@@ -528,7 +528,7 @@ public class ATM_Class extends JFrame {
      */
     void PerditesoHistoriaTransaksionit(String b)
     {
-        Historiatransaksionit[IndeksiTransaksionit] = b;
+        transactionHist[IndeksiTransaksionit] = b;
         IndeksiTransaksionit++;
     }
 
@@ -544,7 +544,7 @@ public class ATM_Class extends JFrame {
         } else{
             StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i < IndeksiTransaksionit; i++) {
-                strBuilder.append(Historiatransaksionit[i] + "\n");
+                strBuilder.append(transactionHist[i] + "\n");
             }
             String newString = strBuilder.toString();
             return newString;
