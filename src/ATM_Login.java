@@ -38,13 +38,13 @@ class ATM_Login extends JFrame
         setLayout(null);
 
         // Card number from the user
-        JLabel karta= new JLabel("Card Number: ");
-        karta.setBounds(10,10,80,25);
-        add(karta);
-        JTextField kartaTekst = new JTextField(12);
-        kartaTekst.setBounds(100,10,160,25);
-        kartaTekst.setBackground(Color.LIGHT_GRAY);
-        add(kartaTekst);
+        JLabel card= new JLabel("Card Number: ");
+        card.setBounds(10,10,80,25);
+        add(card);
+        JTextField cardText = new JTextField(12);
+        cardText.setBounds(100,10,160,25);
+        cardText.setBackground(Color.LIGHT_GRAY);
+        add(cardText);
 
         //Pin from the user
         JLabel Pini = new JLabel("PIN: ");

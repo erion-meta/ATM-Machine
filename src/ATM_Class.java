@@ -250,13 +250,13 @@ public class ATM_Class extends JFrame {
                 if(balance >= 10)
                 {
                     balance = balance - 10;
-                    displayArea.setText("<html> &emsp $10 Withdrawn! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp $10 Withdrawn! <br><br>"+finishedTransaction()+"</html>");
                     enterClick = false;
                     System.out.println("You have withdrawn $10");
-                    PerditesoHistoriaTransaksionit("User has withdrawn $10");
+                    updateTransactionHistory("User has withdrawn $10");
                 } else
                 {
-                    displayArea.setText("<html> &emsp Your balance is under $10. Impossible to withdraw!! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp Your balance is under $10. Impossible to withdraw!! <br><br>"+finishedTransaction()+"</html>");
                 }
 
             }
@@ -273,13 +273,13 @@ public class ATM_Class extends JFrame {
                 if(balance >= 50)
                 {
                     balance = balance - 50;
-                    displayArea.setText("<html> &emsp $50 Withdrawn! <br><br> " +TransaksionPerfunduar() + "</html>");
+                    displayArea.setText("<html> &emsp $50 Withdrawn! <br><br> " +finishedTransaction() + "</html>");
                     enterClick = false;
                     System.out.println("You have withdrawn $50");
-                    PerditesoHistoriaTransaksionit("User has withdrawn $50");
+                    updateTransactionHistory("User has withdrawn $50");
                 } else
                 {
-                    displayArea.setText("<html> &emsp Your balance is under $50. Impossible to withdraw!! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp Your balance is under $50. Impossible to withdraw!! <br><br>"+finishedTransaction()+"</html>");
                 }
 
             }
@@ -297,13 +297,13 @@ public class ATM_Class extends JFrame {
                 if(balance >= 100)
                 {
                     balance = balance - 100;
-                    displayArea.setText("<html> &emsp $100 Withdrawn! <br><br> "+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp $100 Withdrawn! <br><br> "+finishedTransaction()+"</html>");
                     enterClick = false;
                     System.out.println("You have withdrawn $100");
-                    PerditesoHistoriaTransaksionit("User has withdrawn $100");
+                    updateTransactionHistory("User has withdrawn $100");
                 } else
                 {
-                    displayArea.setText("<html> &emsp Your balance is under $100. Impossible to withdraw!! <br><br>"+TransaksionPerfunduar()+"</html>");
+                    displayArea.setText("<html> &emsp Your balance is under $100. Impossible to withdraw!! <br><br>"+finishedTransaction()+"</html>");
                 }
 
             }
@@ -316,7 +316,7 @@ public class ATM_Class extends JFrame {
         {
             public void actionPerformed(ActionEvent event)
             {
-                JOptionPane.showMessageDialog(null,"Your invoice: \n" +printoFaturen());
+                JOptionPane.showMessageDialog(null,"Your invoice: \n" +printBill());
                 JOptionPane.showMessageDialog(null, "Signing out of your account! Back to registration!");
                 dispose();
                 new ATM_Login();
@@ -332,8 +332,8 @@ public class ATM_Class extends JFrame {
             public void actionPerformed(ActionEvent event)
             {
                 inputDisplay.setText("ATM operations: ");
-                displayArea.setText("<html> &emsp The input field was deleted! <br><br>"+TransaksionPerfunduar()+" </html>");
-                fshiInputin();
+                displayArea.setText("<html> &emsp The input field was deleted! <br><br>"+finishedTransaction()+" </html>");
+                deleteInput();
                 enterClick = false;
             }
         });
@@ -343,52 +343,52 @@ public class ATM_Class extends JFrame {
         //Each button contains ActionListener and Action event method
         number1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("1"));
+                inputDisplay.setText("..." + updateInput("1"));
             }
         });
         number2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("2"));
+                inputDisplay.setText("..." + updateInput("2"));
             }
         });
         number3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("3"));
+                inputDisplay.setText("..." + updateInput("3"));
             }
         });
         number4.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("4"));
+                inputDisplay.setText("..." + updateInput("4"));
             }
         });
         number5.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("5"));
+                inputDisplay.setText("..." + updateInput("5"));
             }
         });
         number6.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("6"));
+                inputDisplay.setText("..." + updateInput("6"));
             }
         });
         number7.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("7"));
+                inputDisplay.setText("..." + updateInput("7"));
             }
         });
         number8.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("8"));
+                inputDisplay.setText("..." + updateInput("8"));
             }
         });
         number9.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("9"));
+                inputDisplay.setText("..." + updateInput("9"));
             }
         });
         number0.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
-                inputDisplay.setText("..." + perditesoInputin("0"));
+                inputDisplay.setText("..." + updateInput("0"));
             }
         });
 
@@ -397,7 +397,7 @@ public class ATM_Class extends JFrame {
         deposit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 displayArea.setText("<html> &emsp The deposit was selected! <br> &emsp Please enter an amount and click Enter! <br><br>"
-                        + TransaksionPerfunduar() + "</html>" );
+                        + finishedTransaction() + "</html>" );
                 enterClick = true;
             }
         });
@@ -413,26 +413,26 @@ public class ATM_Class extends JFrame {
                 {
                     //If the input set by the user is 0, an error message is output
                     //On the contrary, the balance is updated with the set amount.
-                    if(Integer.parseInt(getInputiVendosur())==0 || getInputiVendosur().equals("0000"))
+                    if(Integer.parseInt(getInputSet())==0 || getInputSet().equals("0000"))
                     {
                         displayArea.setText("\tYou have not set any value!");
-                        fshiInputin();
+                        deleteInput();
                         inputDisplay.setText("...");
                         enterClick = false;
                     }else
                     {
-                        PerditesoBalancen(Integer.parseInt(getInputiVendosur()));
-                        displayArea.setText("<html> &emsp You have deposited $" + getInputiVendosur()
-                                + "! <br><br>" + TransaksionPerfunduar() + "</html>");
-                        PerditesoHistoriaTransaksionit("The user has deposited $" + getInputiVendosur());
+                        updateBalance(Integer.parseInt(getInputSet()));
+                        displayArea.setText("<html> &emsp You have deposited $" + getInputSet()
+                                + "! <br><br>" + finishedTransaction() + "</html>");
+                        updateTransactionHistory("The user has deposited $" + getInputSet());
                     }
-                    fshiInputin();
+                    deleteInput();
                     inputDisplay.setText("...");
                     enterClick = false;
                 }else
                 {
-                    displayArea.setText("<html> &emsp You have not selected any action! <br><br>" + TransaksionPerfunduar() + "</html>");
-                    fshiInputin();
+                    displayArea.setText("<html> &emsp You have not selected any action! <br><br>" + finishedTransaction() + "</html>");
+                    deleteInput();
                     inputDisplay.setText("...");
                 }
             }
@@ -442,10 +442,10 @@ public class ATM_Class extends JFrame {
     ////Methods for calculating actions with the balance\\\\
 
     /*
-     * "Delete Input" method
+     * "deleteInput" method
      * Deletes the input placed in the panel
      */
-    public void fshiInputin()
+    public void deleteInput()
     {
         //Checks the input numbers from index 0 to 3
         for(int i = 0; i<=3; i++)
@@ -456,10 +456,10 @@ public class ATM_Class extends JFrame {
     }
 
     /*
-     * "PeerditesonInputin" method
+     * "updateInput" method
      * Updates the input area with a number when the corresponding button is clicked
      */
-    String perditesoInputin(String a)
+    String updateInput(String a)
     {
         if(inputIndex <= 3)
         { transaction[inputIndex] = a;
@@ -488,7 +488,7 @@ public class ATM_Class extends JFrame {
      * "getInputSet" method
      * Takes the input entered by the user and updates the balance
      */
-    String getInputiVendosur()
+    String getInputSet()
     {
         StringBuilder strBuilder = new StringBuilder();
         //Input must not be 0.
@@ -504,40 +504,40 @@ public class ATM_Class extends JFrame {
 
     }
     /*
-     * Metoda "TransaksionPerfunduar"
+     * "finishedTransaction" method
      * Restore the program to its original state with the new updated balance
      * Call it every time a transaction is completed
      */
-    String TransaksionPerfunduar()
+    String finishedTransaction()
     {
         return "&emsp Instruction Area <br> &emsp Please select one of the functions below <br> &emsp Momentum balance: $" + balance;
     }
 
     /*
-     * "UpdateBalance" method
+     * "updateBalance" method
      * Updates balance after deposit
      */
-    void PerditesoBalancen(int l)
+    void updateBalance(int l)
     {
         balance += l;
     }
 
     /*
-     * "UpdateTransactionHistory" method
+     * "updateTransactionHistory" method
      * Updates the history of the transaction made at the ATM, which will be printed on the invoice.
      */
-    void PerditesoHistoriaTransaksionit(String b)
+    void updateTransactionHistory(String b)
     {
         transactionHist[transactionIndex] = b;
         transactionIndex++;
     }
 
     /*
-     * Metoda "printoFaturen"
+     * "printBill" method
      * Prints the invoice after closing the program
      * Printed invoice together with all transactions made
      */
-    String printoFaturen()
+    String printBill()
     {
         if(transaction[0].equals(null)){
             return "&emsp No transaction has been made!";
