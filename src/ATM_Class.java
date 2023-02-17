@@ -71,11 +71,11 @@ public class ATM_Class extends JFrame {
         bottomArea.add(inputDisplay, BorderLayout.NORTH);
 
         //Configuring the appearance of buttons in ATM
-        GridBagLayout butonat = new GridBagLayout();
-        buttonPanel.setLayout(butonat);
+        GridBagLayout buttons = new GridBagLayout();
+        buttonPanel.setLayout(buttons);
         buttonPanel.setBackground(Color.black);
         buttonPanel.setBorder(BorderFactory.createLineBorder(Color.red));
-        GridBagConstraints butonatK = new GridBagConstraints();
+        GridBagConstraints atmButtons = new GridBagConstraints();
 
 
 
@@ -83,152 +83,152 @@ public class ATM_Class extends JFrame {
          * Determining the place of presentation, size, background color, text configurations
          * And finally adding them to the panel.
          */
-        butonatK.weightx = 0.1;
-        butonatK.weighty = 0.1;
+        atmButtons.weightx = 0.1;
+        atmButtons.weighty = 0.1;
 
         JButton withdrawn1 = new JButton("Withdraw $10");
-        butonatK.gridx = 0;
-        butonatK.gridy = 0;
-        butonatK.insets = new Insets(0,0,5,5);
+        atmButtons.gridx = 0;
+        atmButtons.gridy = 0;
+        atmButtons.insets = new Insets(0,0,5,5);
         withdrawn1.setSize(new Dimension(200,100));
         withdrawn1.setBackground(Color.cyan);
         withdrawn1.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(withdrawn1, butonatK);
+        buttonPanel.add(withdrawn1, atmButtons);
 
         JButton withdrawn2 = new JButton("Withdraw $50");
-        butonatK.gridx = 0;
-        butonatK.gridy = 1;
+        atmButtons.gridx = 0;
+        atmButtons.gridy = 1;
         withdrawn2.setSize(new Dimension(200,100));
         withdrawn2.setBackground(Color.cyan);
         withdrawn2.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(withdrawn2, butonatK);
+        buttonPanel.add(withdrawn2, atmButtons);
 
         JButton withdrawn3 = new JButton("Withdraw $100");
-        butonatK.gridx = 0;
-        butonatK.gridy = 2;
+        atmButtons.gridx = 0;
+        atmButtons.gridy = 2;
         withdrawn3.setSize(new Dimension(200,100));
         withdrawn3.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(withdrawn3, butonatK);
+        buttonPanel.add(withdrawn3, atmButtons);
         withdrawn3.setBackground(Color.cyan);
 
         JButton deposit = new JButton("Deposit");
-        butonatK.gridx = 0;
-        butonatK.gridy = 3;
+        atmButtons.gridx = 0;
+        atmButtons.gridy = 3;
         deposit.setSize(new Dimension(200,30));
         deposit.setBackground(Color.LIGHT_GRAY);
         deposit.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(deposit,butonatK);
+        buttonPanel.add(deposit,atmButtons);
 
         JButton exit = new JButton("Exit");
-        butonatK.gridx = 0;
-        butonatK.gridy = 4;
-        butonatK.anchor = GridBagConstraints.PAGE_END;
+        atmButtons.gridx = 0;
+        atmButtons.gridy = 4;
+        atmButtons.anchor = GridBagConstraints.PAGE_END;
         exit.setSize(new Dimension(200,30));
         exit.setBackground(Color.red);
         exit.setForeground(Color.white);
         exit.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(exit, butonatK);
+        buttonPanel.add(exit, atmButtons);
 
         JButton number1 = new JButton("1");
-        butonatK.gridx = 1;
-        butonatK.gridy = 0;
+        atmButtons.gridx = 1;
+        atmButtons.gridy = 0;
         number1.setSize(new Dimension(200,30));
         number1.setBackground(Color.YELLOW);
         number1.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(number1, butonatK);
+        buttonPanel.add(number1, atmButtons);
 
         JButton number2 = new JButton("2");
-        butonatK.gridx = 2;
-        butonatK.gridy = 0;
+        atmButtons.gridx = 2;
+        atmButtons.gridy = 0;
         number2.setSize(new Dimension(200,30));
         number2.setBackground(Color.YELLOW);
         number2.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(number2, butonatK);
+        buttonPanel.add(number2, atmButtons);
 
         JButton number3 = new JButton("3");
-        butonatK.gridx = 3;
-        butonatK.gridy = 0;
+        atmButtons.gridx = 3;
+        atmButtons.gridy = 0;
         number3.setSize(new Dimension(200,30));
         number3.setBackground(Color.YELLOW);
         number3.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(number3, butonatK);
+        buttonPanel.add(number3, atmButtons);
 
         JButton number4 = new JButton("4");
-        butonatK.gridx = 1;
-        butonatK.gridy = 1;
+        atmButtons.gridx = 1;
+        atmButtons.gridy = 1;
         number4.setSize(new Dimension(200,30));
         number4.setBackground(Color.YELLOW);
         number4.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(number4, butonatK);
+        buttonPanel.add(number4, atmButtons);
 
         JButton number5 = new JButton("5");
-        butonatK.gridx = 2;
-        butonatK.gridy = 1;
+        atmButtons.gridx = 2;
+        atmButtons.gridy = 1;
         number5.setSize(new Dimension(200,30));
         number5.setBackground(Color.YELLOW);
         number5.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(number5, butonatK);
+        buttonPanel.add(number5, atmButtons);
 
         JButton number6 = new JButton("6");
-        butonatK.gridx = 3;
-        butonatK.gridy = 1;
+        atmButtons.gridx = 3;
+        atmButtons.gridy = 1;
         number6.setSize(new Dimension(200,30));
         number6.setBackground(Color.YELLOW);
         number6.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(number6, butonatK);
+        buttonPanel.add(number6, atmButtons);
 
-        JButton numri7 = new JButton("7");
-        butonatK.gridx = 1;
-        butonatK.gridy = 2;
-        numri7.setSize(new Dimension(200,30));
-        numri7.setBackground(Color.YELLOW);
-        numri7.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri7, butonatK);
+        JButton number7 = new JButton("7");
+        atmButtons.gridx = 1;
+        atmButtons.gridy = 2;
+        number7.setSize(new Dimension(200,30));
+        number7.setBackground(Color.YELLOW);
+        number7.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number7, atmButtons);
 
-        JButton numri8 = new JButton("8");
-        butonatK.gridx = 2;
-        butonatK.gridy = 2;
-        numri8.setSize(new Dimension(200,30));
-        numri8.setBackground(Color.YELLOW);
-        numri8.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri8, butonatK);
+        JButton number8 = new JButton("8");
+        atmButtons.gridx = 2;
+        atmButtons.gridy = 2;
+        number8.setSize(new Dimension(200,30));
+        number8.setBackground(Color.YELLOW);
+        number8.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number8, atmButtons);
 
-        JButton numri9 = new JButton("9");
-        butonatK.gridx = 3;
-        butonatK.gridy = 2;
-        numri9.setSize(new Dimension(200,30));
-        numri9.setBackground(Color.YELLOW);
-        numri9.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri9, butonatK);
+        JButton number9 = new JButton("9");
+        atmButtons.gridx = 3;
+        atmButtons.gridy = 2;
+        number9.setSize(new Dimension(200,30));
+        number9.setBackground(Color.YELLOW);
+        number9.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number9, atmButtons);
 
-        JButton numri0 = new JButton("0");
-        butonatK.gridx = 1;
-        butonatK.gridy = 3;
-        numri0.setSize(new Dimension(200,30));
-        numri0.setBackground(Color.YELLOW);
-        numri0.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri0, butonatK);
+        JButton number0 = new JButton("0");
+        atmButtons.gridx = 1;
+        atmButtons.gridy = 3;
+        number0.setSize(new Dimension(200,30));
+        number0.setBackground(Color.YELLOW);
+        number0.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number0, atmButtons);
 
-        JButton fshi = new JButton("Delete");
-        butonatK.gridx = 2;
-        butonatK.gridy = 3;
-        fshi.setSize(new Dimension(200,30));
-        fshi.setBackground(Color.white);
-        fshi.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(fshi, butonatK);
+        JButton delete = new JButton("Delete");
+        atmButtons.gridx = 2;
+        atmButtons.gridy = 3;
+        delete.setSize(new Dimension(200,30));
+        delete.setBackground(Color.white);
+        delete.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(delete, atmButtons);
 
         JButton enter = new JButton("Enter");
-        butonatK.gridx = 3;
-        butonatK.gridy = 3;
+        atmButtons.gridx = 3;
+        atmButtons.gridy = 3;
         enter.setSize(new Dimension(200,30));
         enter.setBackground(Color.green);
         enter.setForeground(Color.white);
         enter.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(enter, butonatK);
+        buttonPanel.add(enter, atmButtons);
 
         //We add all the buttons to the upper panel.
 
-        buttonPanel.add(enter,butonatK);
+        buttonPanel.add(enter,atmButtons);
         bottomArea.add(buttonPanel, BorderLayout.CENTER);
         bottomArea.setBackground(Color.LIGHT_GRAY);
         add(displayArea, BorderLayout.NORTH);
@@ -327,7 +327,7 @@ public class ATM_Class extends JFrame {
         //Delete button
         //Deletes the input set by the user with the buttons
 
-        fshi.addActionListener(new ActionListener()
+        delete.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent event)
             {
@@ -371,22 +371,22 @@ public class ATM_Class extends JFrame {
                 inputDisplay.setText("..." + perditesoInputin("6"));
             }
         });
-        numri7.addActionListener(new ActionListener(){
+        number7.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("7"));
             }
         });
-        numri8.addActionListener(new ActionListener(){
+        number8.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("8"));
             }
         });
-        numri9.addActionListener(new ActionListener(){
+        number9.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("9"));
             }
         });
-        numri0.addActionListener(new ActionListener(){
+        number0.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("0"));
             }
