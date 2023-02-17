@@ -17,8 +17,8 @@ public class ATM_Class extends JFrame {
     String[] transaction = new String[4];  // The input that the user decides to deposit
     String[] transactionHist = new String[100];  // Keeps the transaction history that will be printed on the invoice
     int inputIndex = 0; //The input index set by the user
-    int IndeksiTransaksionit = 0;  //The index of the transaction that was performed
-    boolean ShtypEnter = false;
+    int transactionIndex = 0;  //The index of the transaction that was performed
+    boolean enterClick = false;
 
     // ATM_Class constructor
     public ATM_Class()
@@ -251,7 +251,7 @@ public class ATM_Class extends JFrame {
                 {
                     balance = balance - 10;
                     displayArea.setText("<html> &emsp $10 Withdrawn! <br><br>"+TransaksionPerfunduar()+"</html>");
-                    ShtypEnter = false;
+                    enterClick = false;
                     System.out.println("You have withdrawn $10");
                     PerditesoHistoriaTransaksionit("User has withdrawn $10");
                 } else
@@ -274,7 +274,7 @@ public class ATM_Class extends JFrame {
                 {
                     balance = balance - 50;
                     displayArea.setText("<html> &emsp $50 Withdrawn! <br><br> " +TransaksionPerfunduar() + "</html>");
-                    ShtypEnter = false;
+                    enterClick = false;
                     System.out.println("You have withdrawn $50");
                     PerditesoHistoriaTransaksionit("User has withdrawn $50");
                 } else
@@ -298,7 +298,7 @@ public class ATM_Class extends JFrame {
                 {
                     balance = balance - 100;
                     displayArea.setText("<html> &emsp $100 Withdrawn! <br><br> "+TransaksionPerfunduar()+"</html>");
-                    ShtypEnter = false;
+                    enterClick = false;
                     System.out.println("You have withdrawn $100");
                     PerditesoHistoriaTransaksionit("User has withdrawn $100");
                 } else
@@ -334,7 +334,7 @@ public class ATM_Class extends JFrame {
                 inputDisplay.setText("ATM operations: ");
                 displayArea.setText("<html> &emsp The input field was deleted! <br><br>"+TransaksionPerfunduar()+" </html>");
                 fshiInputin();
-                ShtypEnter = false;
+                enterClick = false;
             }
         });
 
@@ -398,7 +398,7 @@ public class ATM_Class extends JFrame {
             public void actionPerformed(ActionEvent event) {
                 displayArea.setText("<html> &emsp The deposit was selected! <br> &emsp Please enter an amount and click Enter! <br><br>"
                         + TransaksionPerfunduar() + "</html>" );
-                ShtypEnter = true;
+                enterClick = true;
             }
         });
 
@@ -409,7 +409,7 @@ public class ATM_Class extends JFrame {
             public void actionPerformed(ActionEvent event)
             {
                 //Condition to perform the action on the enter button
-                if(ShtypEnter == true)
+                if(enterClick == true)
                 {
                     //If the input set by the user is 0, an error message is output
                     //On the contrary, the balance is updated with the set amount.
@@ -418,7 +418,7 @@ public class ATM_Class extends JFrame {
                         displayArea.setText("\tYou have not set any value!");
                         fshiInputin();
                         inputDisplay.setText("...");
-                        ShtypEnter = false;
+                        enterClick = false;
                     }else
                     {
                         PerditesoBalancen(Integer.parseInt(getInputiVendosur()));
@@ -428,7 +428,7 @@ public class ATM_Class extends JFrame {
                     }
                     fshiInputin();
                     inputDisplay.setText("...");
-                    ShtypEnter = false;
+                    enterClick = false;
                 }else
                 {
                     displayArea.setText("<html> &emsp You have not selected any action! <br><br>" + TransaksionPerfunduar() + "</html>");
@@ -528,8 +528,8 @@ public class ATM_Class extends JFrame {
      */
     void PerditesoHistoriaTransaksionit(String b)
     {
-        transactionHist[IndeksiTransaksionit] = b;
-        IndeksiTransaksionit++;
+        transactionHist[transactionIndex] = b;
+        transactionIndex++;
     }
 
     /*
@@ -543,7 +543,7 @@ public class ATM_Class extends JFrame {
             return "&emsp No transaction has been made!";
         } else{
             StringBuilder strBuilder = new StringBuilder();
-            for (int i = 0; i < IndeksiTransaksionit; i++) {
+            for (int i = 0; i < transactionIndex; i++) {
                 strBuilder.append(transactionHist[i] + "\n");
             }
             String newString = strBuilder.toString();
