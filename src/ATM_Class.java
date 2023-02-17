@@ -14,7 +14,7 @@ public class ATM_Class extends JFrame {
     // To control if "Deposit" is clicked before "Enter".
 
     int balance = 100;   // Initialize the initial balance with $100.
-    String[] transaksioni = new String[4];  // The input that the user decides to deposit
+    String[] transaction = new String[4];  // The input that the user decides to deposit
     String[] Historiatransaksionit = new String[100];  // Keeps the transaction history that will be printed on the invoice
     int IndeksiInputit = 0; //The input index set by the user
     int IndeksiTransaksionit = 0;  //The index of the transaction that was performed
@@ -27,7 +27,7 @@ public class ATM_Class extends JFrame {
 
         for (int i=0; i <= 3; i++)
         {
-            transaksioni[i] ="";
+            transaction[i] ="";
         }
         setResizable(false);
         setLocationRelativeTo(null);
@@ -450,7 +450,7 @@ public class ATM_Class extends JFrame {
         //Checks the input numbers from index 0 to 3
         for(int i = 0; i<=3; i++)
         {
-            transaksioni[i] = "";
+            transaction[i] = "";
         }
         IndeksiInputit = 0;
     }
@@ -462,13 +462,13 @@ public class ATM_Class extends JFrame {
     String perditesoInputin(String a)
     {
         if(IndeksiInputit <= 3)
-        { transaksioni[IndeksiInputit] = a;
+        { transaction[IndeksiInputit] = a;
             IndeksiInputit ++;
 
             StringBuilder strBuilder = new StringBuilder();
-            for(int i = 0; i <transaksioni.length; i++)
+            for(int i = 0; i <transaction.length; i++)
             {
-                strBuilder.append(transaksioni[i]);
+                strBuilder.append(transaction[i]);
             }
             String newString = strBuilder.toString();
             return newString;
@@ -477,7 +477,7 @@ public class ATM_Class extends JFrame {
         {
             StringBuilder strBuilder = new StringBuilder();
             for (int i = 0; i <= 3; i++) {
-                strBuilder.append(transaksioni[i]);
+                strBuilder.append(transaction[i]);
             }
             String newString = strBuilder.toString();
             return newString;
@@ -492,11 +492,11 @@ public class ATM_Class extends JFrame {
     {
         StringBuilder strBuilder = new StringBuilder();
         //Input must not be 0.
-        if(transaksioni[0] == ""){
+        if(transaction[0] == ""){
             return "0000";
         } else {
-            for (int i = 0; i < transaksioni.length; i++) {
-                strBuilder.append(transaksioni[i]);
+            for (int i = 0; i < transaction.length; i++) {
+                strBuilder.append(transaction[i]);
             }
             String newString = strBuilder.toString();
             return newString;
@@ -539,7 +539,7 @@ public class ATM_Class extends JFrame {
      */
     String printoFaturen()
     {
-        if(transaksioni[0].equals(null)){
+        if(transaction[0].equals(null)){
             return "&emsp No transaction has been made!";
         } else{
             StringBuilder strBuilder = new StringBuilder();
