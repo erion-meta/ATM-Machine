@@ -31,7 +31,7 @@ public class ATM_Class extends JFrame {
         }
         setResizable(false);
         setLocationRelativeTo(null);
-        NdertoATM();
+        BuildATM();
         pack();
         setSize(800,500);
         setVisible(true);
@@ -42,7 +42,7 @@ public class ATM_Class extends JFrame {
      * The method that configures the GUI
      * Configuring the panel layout
      */
-    protected void NdertoATM()
+    protected void BuildATM()
     {
 
         /*
@@ -86,96 +86,96 @@ public class ATM_Class extends JFrame {
         butonatK.weightx = 0.1;
         butonatK.weighty = 0.1;
 
-        JButton terhiq1 = new JButton("Withdraw $10");
+        JButton withdrawn1 = new JButton("Withdraw $10");
         butonatK.gridx = 0;
         butonatK.gridy = 0;
         butonatK.insets = new Insets(0,0,5,5);
-        terhiq1.setSize(new Dimension(200,100));
-        terhiq1.setBackground(Color.cyan);
-        terhiq1.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(terhiq1, butonatK);
+        withdrawn1.setSize(new Dimension(200,100));
+        withdrawn1.setBackground(Color.cyan);
+        withdrawn1.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(withdrawn1, butonatK);
 
-        JButton terhiq2 = new JButton("Withdraw $50");
+        JButton withdrawn2 = new JButton("Withdraw $50");
         butonatK.gridx = 0;
         butonatK.gridy = 1;
-        terhiq2.setSize(new Dimension(200,100));
-        terhiq2.setBackground(Color.cyan);
-        terhiq2.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(terhiq2, butonatK);
+        withdrawn2.setSize(new Dimension(200,100));
+        withdrawn2.setBackground(Color.cyan);
+        withdrawn2.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(withdrawn2, butonatK);
 
-        JButton terhiq3 = new JButton("Withdraw $100");
+        JButton withdrawn3 = new JButton("Withdraw $100");
         butonatK.gridx = 0;
         butonatK.gridy = 2;
-        terhiq2.setSize(new Dimension(200,100));
-        terhiq3.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(terhiq3, butonatK);
-        terhiq3.setBackground(Color.cyan);
+        withdrawn3.setSize(new Dimension(200,100));
+        withdrawn3.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(withdrawn3, butonatK);
+        withdrawn3.setBackground(Color.cyan);
 
-        JButton depozito = new JButton("Deposit");
+        JButton deposit = new JButton("Deposit");
         butonatK.gridx = 0;
         butonatK.gridy = 3;
-        depozito.setSize(new Dimension(200,30));
-        depozito.setBackground(Color.LIGHT_GRAY);
-        depozito.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(depozito,butonatK);
+        deposit.setSize(new Dimension(200,30));
+        deposit.setBackground(Color.LIGHT_GRAY);
+        deposit.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(deposit,butonatK);
 
-        JButton dil = new JButton("Exit");
+        JButton exit = new JButton("Exit");
         butonatK.gridx = 0;
         butonatK.gridy = 4;
         butonatK.anchor = GridBagConstraints.PAGE_END;
-        dil.setSize(new Dimension(200,30));
-        dil.setBackground(Color.red);
-        dil.setForeground(Color.white);
-        dil.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(dil, butonatK);
+        exit.setSize(new Dimension(200,30));
+        exit.setBackground(Color.red);
+        exit.setForeground(Color.white);
+        exit.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(exit, butonatK);
 
-        JButton numri1 = new JButton("1");
+        JButton number1 = new JButton("1");
         butonatK.gridx = 1;
         butonatK.gridy = 0;
-        numri1.setSize(new Dimension(200,30));
-        numri1.setBackground(Color.YELLOW);
-        numri1.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri1, butonatK);
+        number1.setSize(new Dimension(200,30));
+        number1.setBackground(Color.YELLOW);
+        number1.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number1, butonatK);
 
-        JButton numri2 = new JButton("2");
+        JButton number2 = new JButton("2");
         butonatK.gridx = 2;
         butonatK.gridy = 0;
-        numri2.setSize(new Dimension(200,30));
-        numri2.setBackground(Color.YELLOW);
-        numri2.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri2, butonatK);
+        number2.setSize(new Dimension(200,30));
+        number2.setBackground(Color.YELLOW);
+        number2.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number2, butonatK);
 
-        JButton numri3 = new JButton("3");
+        JButton number3 = new JButton("3");
         butonatK.gridx = 3;
         butonatK.gridy = 0;
-        numri3.setSize(new Dimension(200,30));
-        numri3.setBackground(Color.YELLOW);
-        numri3.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri3, butonatK);
+        number3.setSize(new Dimension(200,30));
+        number3.setBackground(Color.YELLOW);
+        number3.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number3, butonatK);
 
-        JButton numri4 = new JButton("4");
+        JButton number4 = new JButton("4");
         butonatK.gridx = 1;
         butonatK.gridy = 1;
-        numri4.setSize(new Dimension(200,30));
-        numri4.setBackground(Color.YELLOW);
-        numri4.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri4, butonatK);
+        number4.setSize(new Dimension(200,30));
+        number4.setBackground(Color.YELLOW);
+        number4.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number4, butonatK);
 
-        JButton numri5 = new JButton("5");
+        JButton number5 = new JButton("5");
         butonatK.gridx = 2;
         butonatK.gridy = 1;
-        numri5.setSize(new Dimension(200,30));
-        numri5.setBackground(Color.YELLOW);
-        numri5.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri5, butonatK);
+        number5.setSize(new Dimension(200,30));
+        number5.setBackground(Color.YELLOW);
+        number5.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number5, butonatK);
 
-        JButton numri6 = new JButton("6");
+        JButton number6 = new JButton("6");
         butonatK.gridx = 3;
         butonatK.gridy = 1;
-        numri6.setSize(new Dimension(200,30));
-        numri6.setBackground(Color.YELLOW);
-        numri6.setFont(new Font("SansSerif", Font. BOLD, 15));
-        buttonPanel.add(numri6, butonatK);
+        number6.setSize(new Dimension(200,30));
+        number6.setBackground(Color.YELLOW);
+        number6.setFont(new Font("SansSerif", Font. BOLD, 15));
+        buttonPanel.add(number6, butonatK);
 
         JButton numri7 = new JButton("7");
         butonatK.gridx = 1;
@@ -238,9 +238,9 @@ public class ATM_Class extends JFrame {
          * ActionListener configuration
          * With 3 balance pull buttons
          */
-        terhiq1.addActionListener(new ActionListener()
+        withdrawn1.addActionListener(new ActionListener()
         {
-            // ActionEvent method for the Withdraw $10 button
+            // ActionEvent method for the withdrawn $10 button
             public void actionPerformed(ActionEvent event)
             {
                 /*
@@ -262,8 +262,8 @@ public class ATM_Class extends JFrame {
             }
         });
 
-        terhiq2.addActionListener(new ActionListener()
-        {	//ActionEvent method for the Withdraw $50 button
+        withdrawn2.addActionListener(new ActionListener()
+        {	//ActionEvent method for the Withdrawn $50 button
             public void actionPerformed(ActionEvent event)
             {
                 /*
@@ -285,9 +285,9 @@ public class ATM_Class extends JFrame {
             }
         });
 
-        terhiq3.addActionListener(new ActionListener()
+        withdrawn3.addActionListener(new ActionListener()
         {
-            //ActionEvent method for the button Withdraw $100
+            //ActionEvent method for the button Withdrawn $100
             public void actionPerformed(ActionEvent event)
             {
                 /*
@@ -312,7 +312,7 @@ public class ATM_Class extends JFrame {
         // "Exit" button
         // It makes it possible to exit the ATM and return to the login once again
 
-        dil.addActionListener(new ActionListener()
+        exit.addActionListener(new ActionListener()
         {
             public void actionPerformed(ActionEvent event)
             {
@@ -341,32 +341,32 @@ public class ATM_Class extends JFrame {
         //Number buttons
         //Makes it possible to add the number of that button to the input area every time a button is clicked by the user
         //Each button contains ActionListener and Action event method
-        numri1.addActionListener(new ActionListener(){
+        number1.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("1"));
             }
         });
-        numri2.addActionListener(new ActionListener(){
+        number2.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("2"));
             }
         });
-        numri3.addActionListener(new ActionListener(){
+        number3.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("3"));
             }
         });
-        numri4.addActionListener(new ActionListener(){
+        number4.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("4"));
             }
         });
-        numri5.addActionListener(new ActionListener(){
+        number5.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("5"));
             }
         });
-        numri6.addActionListener(new ActionListener(){
+        number6.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 inputDisplay.setText("..." + perditesoInputin("6"));
             }
@@ -394,7 +394,7 @@ public class ATM_Class extends JFrame {
 
         //Deposit button
         //Enables the input entered by the user to be deposited into the account when "Enter" is clicked
-        depozito.addActionListener(new ActionListener(){
+        deposit.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent event) {
                 displayArea.setText("<html> &emsp The deposit was selected! <br> &emsp Please enter an amount and click Enter! <br><br>"
                         + TransaksionPerfunduar() + "</html>" );
